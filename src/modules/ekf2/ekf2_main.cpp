@@ -929,9 +929,9 @@ void Ekf2::run()
 						}
 					}
 
-					_ekf.setRangeData(range_finder.timestamp, range_finder.current_distance);
+					_ekf.setRangeData(now, range_finder.current_distance);
 
-					ekf2_timestamps.distance_sensor_timestamp_rel = (int16_t)((int64_t)range_finder.timestamp / 100 -
+					ekf2_timestamps.distance_sensor_timestamp_rel = (int16_t)((int64_t)now / 100 -
 							(int64_t)ekf2_timestamps.timestamp / 100);
 				}
 			}
